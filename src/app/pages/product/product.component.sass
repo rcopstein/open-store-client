@@ -1,0 +1,92 @@
+.inner-wrapper
+    padding: 64px 0
+
+.two-column
+    grid-template-columns: auto 1fr
+    display: grid
+
+.description
+    font-family: "Bellota Text", sans-serif
+    justify-content: space-between
+    flex-direction: column
+    display: flex
+
+.details
+    padding-bottom: 32px
+
+.price
+    font-family: "Bellota Text", sans-serif
+    color: #777777
+    margin-top: 4px
+    font-size: 18px
+    display: block
+
+.image
+    width: 300px
+    height: 300px
+    margin-right: 64px
+
+.out-of-stock
+    text-transform: uppercase
+    text-decoration: none
+    display: inline-block
+    line-height: 40px
+    margin-top: 64px
+    font-size: 14px
+    color: #333
+    padding: 0px
+    height: 40px
+
+.button:hover
+    background: #ededed
+
+.button
+    border: 2px solid #333333
+    text-transform: uppercase
+    text-decoration: none
+    display: inline-block
+    border-radius: 20px
+    text-align: center
+    padding: 0px 48px
+    line-height: 40px
+    margin-top: 64px
+    cursor: pointer
+    font-size: 14px
+    color: #333
+    height: 40px
+    width: 100px
+
+h2
+    font-family: "Cormorant Garamond", serif
+    font-size: 28px
+    margin: 0px 0
+
+h3
+    font-family: "Cormorant Garamond", serif
+
+p
+    margin-top: 48px
+
+app-loading-indicator
+
+    grid-column: 1 / span 2
+
+    display: block
+    text-align: center
+    margin: 64px 0
+
+@media screen and ( max-width: 828px )
+    .image
+        width: 200px
+        height: 200px
+
+@media screen and ( max-width: 664px )
+    .image
+        margin: 0 auto
+        margin-bottom: 64px
+
+    .two-column
+        grid-template-columns: 1fr
+
+    .button
+        margin: 64px auto 0 auto

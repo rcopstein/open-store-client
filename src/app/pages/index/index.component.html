@@ -1,0 +1,82 @@
+<!-- Hero -->
+<div class="hero">
+  <div class="wrapper">
+    <h1>Keep Circling</h1>
+    <p>
+      The most rounded products of all. Now even more circular. <br />
+      Gather 'round, and circle in.
+    </p>
+  </div>
+
+  <!-- Use this if you want to use an image as the hero's background -->
+  <!--
+  <div class="layer"></div>
+
+  <app-image-frame
+    src="image.jpg"
+    external="true"
+    class="bg"
+  >
+  </app-image-frame>-->
+</div>
+
+<!-- View Products -->
+<section class="products">
+  <div class="wrapper">
+    <div class="display">
+      <app-image-frame
+        src="/assets/products/10b8b0ad-22e2-406e-896b-dbf22e17ad1c.jpg"
+        external="true"
+      >
+      </app-image-frame>
+      <app-image-frame
+        src="/assets/products/48b81eb2-119b-4961-b78b-2fe0ecc061a3.jpg"
+        external="true"
+      >
+      </app-image-frame>
+      <app-image-frame
+        src="/assets/products/da5e2eff-146e-409b-92ac-eb5a5e40a7db.jpg"
+        external="true"
+      >
+      </app-image-frame>
+    </div>
+
+    <h2>Hand rounded. Uniquely circular.</h2>
+    <p>
+      Our products are crafted as the unique pieces they are. Care and attention
+      results in an inspiring and high-quality product.
+    </p>
+
+    <div class="button">
+      <app-loading-button
+        content="View Products"
+        [routerLink]="['catalog']"
+      ></app-loading-button>
+    </div>
+  </div>
+</section>
+
+<!-- Culture -->
+<div class="culture">
+  <div class="wrapper">
+    <div class="img">
+      <app-image-frame
+        external="true"
+        src="/assets/products/10b8b0ad-22e2-406e-896b-dbf22e17ad1c.jpg"
+      ></app-image-frame>
+    </div>
+
+    <div class="text">
+      <h2>This is us. We are circular.</h2>
+      <p>
+        We see everyone as their very selves. You are rounded. You are
+        beautiful. We want to help you stay circular.
+      </p>
+      <app-loading-button
+        class="button"
+        content="Learn More"
+        [routerLink]="['about']"
+      ></app-loading-button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,31 @@
+<div class="wrapper" *ngIf="ShouldShow">
+  <div class="content">
+    <div *ngIf="IsInvoke" class="close" (click)="close()">
+      <app-image-frame
+        src="/assets/img/icons/remove.svg"
+        [external]="true"
+      ></app-image-frame>
+    </div>
+
+    <h1>Where are you?</h1>
+
+    <p>
+      The company provides different experiences for different countries
+      including prices, catalog and availability. If your country is not listed
+      we, unfortunately, do not support shipping to your country. Check this
+      page again in the future since we are always looking to support new
+      countries.
+    </p>
+
+    <div class="countries">
+      <div
+        class="country"
+        (click)="select(country.name)"
+        *ngFor="let country of Countries"
+      >
+        {{ country.symbol }}
+        {{ country.name }}
+      </div>
+    </div>
+  </div>
+</div>

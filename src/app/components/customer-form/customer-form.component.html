@@ -1,0 +1,40 @@
+<div [formGroup]="parentFormGroup">
+  <!-- Name -->
+  <div>
+    <!-- Input -->
+    <label>
+      Name
+      <input type="text" formControlName="name" placeholder="John Doe" />
+    </label>
+
+    <!-- Validation Messages -->
+    <div *ngIf="name.invalid && (name.dirty || forceShowValidation)">
+      <p class="error" *ngIf="name.errors.required">
+        Field is required
+      </p>
+    </div>
+  </div>
+
+  <!-- Email -->
+  <div>
+    <!-- Input -->
+    <label>
+      Email
+      <input
+        type="text"
+        formControlName="email"
+        placeholder="john.doe@email.com"
+      />
+    </label>
+
+    <!-- Validation Messages -->
+    <div *ngIf="email.invalid && (email.dirty || forceShowValidation)">
+      <p class="error" *ngIf="email.errors.email && !email.errors.required">
+        Invalid email format
+      </p>
+      <p class="error" *ngIf="email.errors.required">
+        Field is required
+      </p>
+    </div>
+  </div>
+</div>

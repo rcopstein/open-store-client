@@ -1,0 +1,82 @@
+label
+  font-family: 'Bellota Text', sans-serif
+  margin-top: 16px
+  color: #999999
+  font-size: 13px
+  display: block
+
+  &.inline
+    vertical-align: middle
+    margin-top: 0px
+
+div
+  box-sizing: border-box
+  vertical-align: top
+  padding-right: 16px
+  width: 100%
+
+  &.half
+    display: inline-block
+    width: 50%
+
+    &:first-child
+      label
+        margin-top: 0px
+
+.select
+  position: relative
+  margin-top: 0px
+  cursor: pointer
+
+  select
+    appearance: none
+
+  select:after
+    font: 13px "Consolas", monospace
+    color: #cccccc
+    content: '▼'
+
+    pointer-events: none
+    position: absolute
+    padding: 0 0 2px
+    right: 8px
+    top: 4px
+
+input, select
+  font-family: 'Bellota Text', sans-serif
+  border-color: #eeeeee
+  border-width: 0 0 1px 0
+  background: transparent
+  box-sizing: border-box
+  border-radius: 0px
+  color: #333333
+  font-size: 16px
+  display: block
+  outline: none
+  height: 33px
+  padding: 1px
+  width: 100%
+
+  &::placeholder
+    color: #cccccc
+
+    &[type=checkbox]
+      vertical-align: middle
+      display: inline-block
+      width: auto
+
+    &[type=radio]
+      vertical-align: middle
+      display: inline-block
+      margin-right: 16px
+      width: auto
+
+    &.ng-invalid.ng-dirty:not(:focus),
+    &.ng-invalid.ng-touched:not(:focus)
+      border-color: red
+
+.error
+  font-family: 'Bellota Text', sans-serif
+  font-size: 14px
+  margin: 4px 0
+  color: red

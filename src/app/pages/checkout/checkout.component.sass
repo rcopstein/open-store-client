@@ -1,0 +1,89 @@
+:host > .wrapper
+    padding-bottom: 64px
+
+.content
+    grid-template-columns: 1fr auto
+    display: grid
+
+.side
+    margin-left: 64px
+
+.hide
+    display: none
+
+.report
+    font-family: 'Bellota Text', sans-serif
+    border-bottom: 1px solid #721C24
+    border-top: 1px solid #721C24
+    background: #F8D7DA
+    color: #721C24
+    padding: 16px 0
+
+h1
+    font-family: 'Bellota Text', sans-serif
+    margin: 64px 0 32px 0
+    text-align: center
+
+h2
+    font-family: 'Cormorant Garamond', serif
+    margin-top: 32px
+
+    sup
+        font-family: 'Bellota Text', sans-serif
+        margin-left: 4px
+        font-size: 12px
+
+.spacer
+    height: 32px
+
+span
+    font-family: 'Bellota Text', sans-serif
+    vertical-align: middle
+    color: #333333
+
+.button
+    margin-left: auto
+    margin-top: 48px
+    display: block
+    width: 200px
+
+.StripeElement
+    border-bottom: 1px solid #eeeeee
+    box-sizing: border-box
+    padding: 5px 0
+    height: 30px
+
+    &.invalid
+        border-color: red
+
+form
+    max-width: 425px
+
+.bottom
+    margin-top: 64px
+
+    small
+        color: #6b6b6b
+        display: block
+
+label
+    margin-bottom: 24px
+    display: block
+
+    span
+        margin-left: 8px
+
+@media screen and ( max-width: 963px )
+    form
+        width: 100%
+
+@media screen and ( max-width: 763px )
+    .content
+        grid-template-columns: 1fr
+
+    .side
+        margin-left: 0px
+        margin-top: 64px
+
+    .button
+        margin: 48px auto 0 auto

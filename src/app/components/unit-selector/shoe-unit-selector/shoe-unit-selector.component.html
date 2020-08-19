@@ -1,0 +1,18 @@
+<div class="options">
+  <h3>Size</h3>
+
+  <label *ngFor="let unit of units; let i = index">
+    <input
+      type="radio"
+      name="option"
+      [value]="unit"
+      [(ngModel)]="Selected"
+      [disabled]="!unit.available"
+    />
+    <span>{{ unit.size }}</span>
+  </label>
+
+  <div class="unit-alert" *ngIf="ShowAlert">
+    {{ AlertText }}
+  </div>
+</div>

@@ -1,0 +1,57 @@
+<!-- Content Area -->
+<div class="wrapper">
+  <div class="inner-wrapper">
+    <div class="two-column">
+      <!-- Column 1 -->
+      <app-image-frame
+        class="image"
+        src="/assets/products/{{ product.id }}.jpg"
+        *ngIf="!loading && product !== undefined"
+        external="true"
+      ></app-image-frame>
+
+      <!-- Column 2 -->
+      <div class="description">
+        <!-- Product Description -->
+        <div class="product-details" *ngIf="!loading && product !== undefined">
+          <h2>{{ product.name }}</h2>
+          <span class="price" *ngIf="selectedUnit !== undefined"
+            >{{ selectedUnit.price.currency }}$
+            {{ selectedUnit.price.price / 100 }}
+          </span>
+          <p>{{ product.description }}</p>
+        </div>
+
+        <!-- Product Details -->
+        <div class="details">
+          <ng-template app-container></ng-template>
+        </div>
+
+        <!-- Unit Selector -->
+        <ng-template app-container></ng-template>
+
+        <!-- Out of stock indicator -->
+        <div *ngIf="!loading && isAvailable === false" class="out-of-stock">
+          Out of stock
+        </div>
+
+        <!-- Add to cart button -->
+        <div
+          *ngIf="!loading && isAvailable"
+          (click)="addToCart()"
+          class="button"
+        >
+          Add to Cart
+        </div>
+      </div>
+
+      <!-- Product not found indicator-->
+      <div *ngIf="!loading && product === undefined">
+        Product not found
+      </div>
+
+      <!-- Loading indicator -->
+      <app-loading-indicator *ngIf="loading"></app-loading-indicator>
+    </div>
+  </div>
+</div>

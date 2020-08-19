@@ -1,0 +1,31 @@
+<div>
+  <div class="wrapper">
+    <div class="inner">
+      <div class="logo">
+        <a [routerLink]="['/']">
+          <app-image-frame
+            [external]="true"
+            src="/assets/img/logo.svg"
+          ></app-image-frame>
+        </a>
+      </div>
+
+      <ul class="nav">
+        <li><a [routerLink]="['/catalog']">Shop</a></li>
+        <li><a [routerLink]="['/about']">About</a></li>
+        <li><a [routerLink]="['/contact']">Contact</a></li>
+      </ul>
+
+      <div class="other">
+        <!--<div
+          class="country"
+          (click)="showCountrySelector()"
+          *ngIf="CountrySymbol !== undefined"
+        >
+          {{ CountrySymbol }}
+        </div>-->
+        <app-cart-button></app-cart-button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,89 @@
+.wrapper
+    margin-bottom: 64px
+
+h1
+    font-family: "Bellota Text", sans-serif
+    margin-bottom: 32px
+    text-align: center
+    margin-top: 64px
+
+.columns
+    margin-top: 32px
+
+.list
+    padding-bottom: 32px
+    margin: 0px
+
+.total
+    font-family: "Bellota Text", sans-serif
+    color: #777777
+    font-size: 16px
+
+    .line
+        margin-bottom: 4px
+        display: block
+
+        & > span
+            display: inline-block
+
+    .number
+        text-align: right
+        padding-left: 8px
+        float: right
+
+    .last
+        color: #333333
+        margin-top: 4px
+        font-size: 22px
+
+.empty
+    font-family: "Bellota Text", sans-serif
+    text-align: center
+    font-size: 18px
+
+.button:hover
+    background: #ededed
+
+    &.disabled
+        background: transparent
+
+.button
+    border: 2px solid #333333
+    text-transform: uppercase
+    margin: 64px auto 0 auto
+    text-decoration: none
+    border-radius: 20px
+    text-align: center
+    padding: 0px 48px
+    line-height: 40px
+    cursor: pointer
+    font-size: 14px
+    display: block
+    color: #333
+    height: 40px
+    width: 100px
+
+    .lds-ellipsis
+        display: none
+
+    &.disabled
+        cursor: default
+
+        .lds-ellipsis
+            display: inline-block
+            margin-top: 5px
+        span
+            display: none
+
+.error
+    text-align: center
+    max-width: 200px
+    color: #ff0000
+    margin-top: 8px
+
+@media only screen and (max-width: 964px)
+    .columns
+        grid-template-columns: 1fr
+
+    .list
+        margin-right: 0px

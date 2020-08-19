@@ -1,0 +1,150 @@
+@import 'variables'
+
+// Hero
+.hero
+    overflow: hidden
+    color: #333333
+    display: grid
+    height: 250px
+
+    .wrapper
+        margin-bottom: 48px
+        margin-top: auto
+
+        grid-column: 1
+        grid-row: 1
+        z-index: 1
+
+    .layer
+        background: rgba(0, 0, 0, 0.25)
+        grid-column: 1
+        grid-row: 1
+
+    h1
+        font-family: $body-font
+        margin: 0 0 32px 0
+
+    p
+        max-width: 450px
+
+    .bg
+        grid-column: 1
+        height: 400px
+        grid-row: 1
+        z-index: -1
+
+// Products
+.products
+    background: $section-bg-light
+    padding: 64px 0
+
+    .display
+        justify-content: space-around
+        display: flex
+
+        & *
+            height: 150px
+            width: 150px
+            object-fit: cover
+
+    h2
+        margin-bottom: 32px
+        text-align: center
+        margin-top: 64px
+
+    p
+        text-align: center
+        max-width: 500px
+        margin: 0 auto
+
+    .button
+        margin: 48px auto 0px auto
+        display: block
+        width: 250px
+
+// Culture
+.culture
+    background: $section-bg-dark
+    padding: 64px 0
+
+    .wrapper
+        grid-template-columns: 1fr 1fr
+        display: grid
+
+    > div
+        display: flex
+
+    .text
+        justify-content: space-between
+        flex-direction: column
+        display: flex
+        height: 240px
+
+        .button
+            margin-top: 48px
+            width: 250px
+
+        h2
+            margin-bottom: 32px
+            font-weight: 400
+            margin-top: 0px
+
+    .img
+        margin-right: 64px
+
+        *
+            height: 240px
+            width: 240px
+
+// Media
+@media only screen and (max-width: 900px)
+    .grid-item
+        border: 1px solid #333333
+
+    .culture
+        padding-bottom: 32px
+        padding-top: 64px
+
+        .wrapper
+            grid-template-rows: auto auto
+            grid-template-columns: 1fr
+
+        .img
+            margin: 0 auto
+
+            & *:first-child
+                margin: 0 auto
+
+        .text
+            text-align: center
+            display: block
+            margin: 32px
+            height: auto
+
+            .button
+                margin-right: auto
+                margin-left: auto
+
+            h2
+                margin-top: 32px
+
+    .products
+        .display
+            *
+                &:first-child,
+                &:last-child
+                    margin-top: 20px
+                    height: 100px
+                    opacity: 0.5
+                    width: 100px
+
+                &:not(:first-child):not(:last-child)
+                    margin-right: -120px
+                    margin-left: -120px
+                    z-index: 1
+
+        .button
+            margin-top: 48px
+
+        p
+            margin: 16px auto

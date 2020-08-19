@@ -1,0 +1,28 @@
+<form [formGroup]="formGroup" (ngSubmit)="onSubmit()" #checkout_form>
+  <!-- Customer -->
+  <app-customer-form
+    [forceShowValidation]="forceShowValidation"
+    [parentFormGroup]="formGroup"
+  ></app-customer-form>
+
+  <!-- Shipping Address -->
+  <h2>Shipping Address</h2>
+  <app-address-form
+    [forceShowValidation]="forceShowValidation"
+    [parentFormGroup]="ShippingAddress"
+  ></app-address-form>
+
+  <!-- Billing Address -->
+  <h2>Billing Address</h2>
+
+  <label>
+    <input formControlName="use_same_shipping_billing" type="checkbox" />
+    <span>Use the same as shipping</span>
+  </label>
+
+  <app-address-form
+    [hidden]="formGroup.controls.use_same_shipping_billing.value === true"
+    [forceShowValidation]="forceShowValidation"
+    [parentFormGroup]="BillingAddress"
+  ></app-address-form>
+</form>

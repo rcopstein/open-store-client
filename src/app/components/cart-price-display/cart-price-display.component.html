@@ -1,0 +1,28 @@
+<!-- Subtotal -->
+<div class="line" *ngIf="showSubtotal">
+  <span>Subtotal:</span>
+  <span class="number">{{ Subtotal }}</span>
+</div>
+
+<!-- Shipping -->
+<div class="line" *ngIf="showShipping">
+  <span>Shipping:</span>
+  <span class="number">{{ Shipping }}</span>
+</div>
+
+<!-- Tax -->
+<div class="line" *ngIf="showTax">
+  <span>HST/GST:</span>
+  <span class="number">{{ HST }}</span>
+</div>
+
+<div class="line" *ngIf="showTax">
+  <span>PST/QST:</span>
+  <span class="number">{{ PST }}</span>
+</div>
+
+<!-- Total -->
+<div class="line" *ngIf="showTotal">
+  <span class="last">Total:</span>
+  <span class="last number">{{ Total }}</span>
+</div>

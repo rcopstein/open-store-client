@@ -1,0 +1,57 @@
+<div class="wrapper">
+  <div class="loading" *ngIf="!retrieved">LOADING ORDER {{ id }}</div>
+
+  <div *ngIf="retrieved">
+    <!-- Order was successfully retrieved -->
+    <div *ngIf="order !== undefined">
+      <h1>
+        Congratulations! You have spent money!
+      </h1>
+      <p>
+        Your order has been successfully received. You can track its status
+        below. Any update will also be sent to your email address.<br />
+        If you are not receiving updates via email, please contact us at
+        <a href="#">support@company.com</a>. Don't forget to add your order
+        number with the message.
+      </p>
+
+      <br />
+      <app-cart-product
+        *ngFor="let item of order.items"
+        [item]="item"
+        [showRemove]="false"
+        [showOutOfStock]="false"
+        [showQuantityControls]="false"
+      ></app-cart-product>
+
+      <p>
+        <br />
+        ID: {{ id }}
+        <br />
+        Status: {{ order.status }}
+      </p>
+      <p>
+        <br />
+        Sincerely,
+        <br /><br />
+        The Company
+      </p>
+    </div>
+
+    <!-- Order was not found -->
+    <div *ngIf="order === undefined">
+      <h1>Sorry</h1>
+      <p>
+        Your order was not found. Please make sure you have the correct number
+        for your order. If the problem persists, contact us via email at
+        <a href="#">support@company.com</a>.
+      </p>
+      <p>
+        <br /><br />
+        Sincerely,
+        <br /><br />
+        The Company
+      </p>
+    </div>
+  </div>
+</div>

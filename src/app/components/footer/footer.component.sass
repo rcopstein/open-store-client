@@ -1,0 +1,100 @@
+@import 'variables'
+
+:host > div
+    background: $footer-bg
+    color: $footer-color
+
+.inner-footer
+    grid-template-columns: auto auto 1fr
+    padding: 48px 0
+    display: grid
+
+.logo
+    margin-right: 64px
+    background: none
+    height: 48px
+    width: 48px
+
+ul
+    list-style: none
+    padding: 0px
+    margin: 0px
+
+.site-map li
+    line-height: 32px
+    font-size: 14px
+    height: 32px
+
+    a
+        text-decoration: none
+        vertical-align: top
+        transition: 0.25s
+        color: inherit
+
+        &:hover
+            padding-left: 8px
+            cursor: pointer
+
+        &:active
+            padding-left: 4px
+            cursor: pointer
+
+.contact
+    justify-content: space-between
+    flex-direction: column
+    display: flex
+
+    p
+        text-align: right
+        font-size: 14px
+        margin: 0px
+
+    .social
+        text-align: right
+        margin-top: 32px
+
+        li
+            display: inline-block
+            height: 25px
+            width: 25px
+
+            &:not(:first-child)
+                margin-left: 16px
+
+            a:hover
+                .social-icon
+                    position: relative
+                    top: -8px
+
+            a:active
+                .social-icon
+                    position: relative
+                    top: -4px
+
+            .social-icon
+                transition: 0.25s
+                background: none
+                position: relative
+                top: 0px
+
+                img
+                    // height: 30px
+
+@media only screen and (max-width: 600px)
+    .inner-footer
+        grid-template-columns: 1fr
+
+    .logo
+        margin: 0 auto
+        margin-bottom: 32px
+
+    .site-map
+        display: none
+
+    .contact
+
+        p
+            text-align: center
+
+        .social
+            text-align: center

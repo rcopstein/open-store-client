@@ -1,0 +1,24 @@
+:host
+    background: #EFF0F1
+    display: block
+    height: 100%
+    width: 100%
+
+img
+    object-position: 50% 50%
+    object-fit: cover
+    height: 100%
+    width: 100%
+    opacity: 0
+
+.animation
+    animation-fill-mode: forwards
+    animation-duration: 0.5s
+    animation-name: fadeIn
+    opacity: 0
+
+@keyframes fadeIn
+    0%
+        opacity: 0
+    100%
+        opacity: 1

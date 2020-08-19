@@ -1,0 +1,61 @@
+@import 'variables'
+
+.wrapper
+    padding: 32px 0
+
+.noProductWarning
+    font-family: $body-font
+    text-align: center
+    color: #777777
+    margin: 32px 0
+
+.product-list
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr))
+    justify-content: space-between
+    justify-items: center
+    grid-gap: 32px
+    display: grid
+
+    font-family: "Bellota Text", sans-serif
+    padding: 32px 0
+
+    & .product-item
+        box-sizing: border-box
+        margin-bottom: 32px
+        min-height: 300px
+        width: 200px
+
+        text-decoration: none
+        color: inherit
+        display: block
+
+        & h2
+            line-height: 200px
+            margin: 0px
+
+        & app-image-frame
+            height: 200px
+            width: 200px
+
+        &:hover h4
+            text-decoration: underline
+
+        & small
+            font-size: 14px
+            color: #777777
+
+        & img
+            object-fit: cover
+            height: 200px
+            width: 200px
+
+        & h4
+            margin-bottom: 4px
+            font-size: 18px
+
+h2
+    // font-family: "Bellota Text", sans-serif
+    margin-bottom: 32px
+    text-align: center
+    color: #333333
+    margin-top: 16px

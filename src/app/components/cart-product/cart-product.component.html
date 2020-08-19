@@ -1,0 +1,48 @@
+<app-image-frame
+  class="product-image"
+  *ngIf="item"
+  src="/assets/products/{{ item.unit.product.id }}.jpg"
+  external="true"
+></app-image-frame>
+
+<div>
+  <h4>
+    <a [routerLink]="['/catalog', item.unit.product.id]">{{
+      item.unit.product.name
+    }}</a>
+  </h4>
+  <small>{{ details }}</small>
+  <small
+    [class.alert]="availability !== undefined"
+    *ngIf="availability !== undefined || price !== undefined"
+  >
+    - <span>{{ availability || price }}</span>
+  </small>
+</div>
+
+<div class="qt" [class.onlyNumber]="!showQuantityControls">
+  <div
+    class="control"
+    *ngIf="showQuantityControls"
+    [class.hide]="!showDecrease"
+    (click)="onDecreaseClicked()"
+  >
+    -
+  </div>
+  <span>{{ item.quantity }}</span>
+  <div
+    class="control"
+    *ngIf="showQuantityControls"
+    [class.hide]="!showIncrease"
+    (click)="onIncreaseClicked()"
+  >
+    +
+  </div>
+</div>
+
+<div *ngIf="showRemove" class="remove" (click)="onRemoveClicked()">
+  <app-image-frame
+    src="/assets/img/icons/remove.svg"
+    [external]="true"
+  ></app-image-frame>
+</div>

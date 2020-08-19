@@ -1,0 +1,79 @@
+@import 'variables'
+
+:host
+    height: $nav-height
+
+.inner
+    flex-direction: row
+    align-items: center
+    display: flex
+
+.logo
+    a:hover
+        opacity: 0.7
+
+    app-image-frame
+        background: none
+        vertical-align: middle
+        display: inline-block
+        height: 32px
+        width: 32px
+
+.nav
+    box-sizing: border-box
+    height: $nav-height
+    padding: 0px 32px
+    list-style: none
+    flex-grow: 1
+    margin: 0px
+
+    justify-content: space-around
+    display: flex
+
+    & li
+        text-transform: uppercase
+        line-height: $nav-height
+        display: inline-block
+        height: $nav-height
+        font-size: 14px
+
+        a
+            text-decoration: none
+            padding: 0 16px
+            display: block
+            color: inherit
+
+            &:hover
+                text-decoration: underline
+
+.other
+    justify-content: flex-end
+    flex-direction: row
+    text-align: right
+    min-width: 64px
+    display: flex
+
+.country
+    cursor: pointer
+
+    &:hover
+        opacity: 0.8
+
+@media only screen and (max-width: 900px)
+    .inner
+        justify-content: space-between
+        padding-top: 16px
+        flex-wrap: wrap
+
+    .nav
+        padding: 0px
+        margin: 0 16px
+        overflow-x: scroll
+        white-space: nowrap
+
+        flex-basis: 100%
+        margin: 0px
+        order: 5
+
+    .other
+        margin-left: 0px

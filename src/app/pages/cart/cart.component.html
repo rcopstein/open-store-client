@@ -1,0 +1,28 @@
+<div class="wrapper">
+  <h1>Cart</h1>
+
+  <div class="columns">
+    <div class="list">
+      <div class="empty" *ngIf="empty">
+        Your cart is empty<br />
+        Continue <a routerLink="/catalog">shopping</a>
+      </div>
+
+      <app-cart-display
+        (onRemove)="removeProduct($event)"
+        (onQuantityChanged)="quantityChanged($event)"
+      ></app-cart-display>
+    </div>
+
+    <div *ngIf="!empty" class="total">
+      <app-cart-price
+        [showSubtotal]="false"
+        [showShipping]="false"
+        [showTax]="false"
+      ></app-cart-price>
+      <a class="button" routerLink="/checkout" *ngIf="CanCheckout">
+        <span>CHECKOUT</span>
+      </a>
+    </div>
+  </div>
+</div>

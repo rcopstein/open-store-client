@@ -1,0 +1,7 @@
+<app-image-frame
+  (click)="navigate()"
+  [external]="true"
+  class="img"
+  src="/assets/img/icons/cart.svg"
+></app-image-frame>
+<div *ngIf="Count > 0">{{ Count > 99 ? '99+' : Count }}</div>

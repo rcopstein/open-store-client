@@ -1,0 +1,62 @@
+<div class="report" *ngIf="pageError">
+  <div class="wrapper">
+    {{ pageError }}
+  </div>
+</div>
+
+<div class="wrapper">
+  <h1>Checkout</h1>
+
+  <!-- Main content -->
+  <div class="content">
+    <!-- Empty -->
+    <div [class.hide]="tab !== -1"></div>
+
+    <!-- Checkout form -->
+    <app-checkout-form
+      [class.hide]="tab !== 0"
+      #checkout_form
+    ></app-checkout-form>
+
+    <!-- Shipping form -->
+    <app-shipping-form
+      [class.hide]="tab !== 1"
+      #shipping_form
+    ></app-shipping-form>
+
+    <!-- Payment form -->
+    <app-payment-form [class.hide]="tab !== 2" #payment_form></app-payment-form>
+
+    <!-- Sidebar -->
+    <div class="side">
+      <app-cart-display
+        [showRemove]="false"
+        [showQuantityControls]="false"
+      ></app-cart-display>
+
+      <div class="spacer"></div>
+
+      <app-cart-price
+        [showShipping]="tab > 0"
+        [Shipping]="shipping"
+        [Subtotal]="subtotal"
+        [showTax]="tab > 1"
+        [HST]="hst"
+        [PST]="pst"
+        #price
+      ></app-cart-price>
+
+      <app-loading-button
+        [loading]="pageLoading"
+        (onPress)="onNext()"
+        content="NEXT"
+        class="button"
+      ></app-loading-button>
+    </div>
+  </div>
+
+  <!-- Bottom -->
+  <div class="bottom">
+    <small>1. Duties and taxes will update according to shipping address</small>
+  </div>
+</div>

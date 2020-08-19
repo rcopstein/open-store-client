@@ -1,0 +1,72 @@
+$height: 524px
+
+:host
+    border-bottom: 1px solid #ccc
+    text-align: center
+    overflow: hidden
+    height: $height
+    display: block
+
+img
+    height: 100px
+    width: 100px
+
+h2
+    font-family: "Cormorant Garamond", serif
+    margin-bottom: 8px
+    margin-top: 20px
+    font-size: 36px
+
+p
+    margin-top: 0px
+
+a
+    border: 2px solid #333333
+    text-transform: uppercase
+    text-decoration: none
+    display: inline-block
+    border-radius: 20px
+    padding: 0px 48px
+    line-height: 40px
+    font-size: 14px
+    color: #333
+    height: 40px
+
+    &:hover
+        background: #ededed
+
+.outter-content
+    position: absolute
+    height: $height
+    display: block
+    width: 100%
+
+.content
+    margin: 96px auto 128px auto
+    height: 300px
+    width: 250px
+
+    justify-content: space-between
+    flex-direction: column
+    align-items: center
+    display: flex
+
+.overlay
+    background: rgba(255, 255, 255, 0.7)
+    position: absolute
+    height: $height
+    width: 100%
+    z-index: -1
+
+.video
+    position: absolute
+    overflow: hidden
+    height: $height
+    z-index: -2
+    width: 100%
+
+    video
+        object-position: 50% 50%
+        object-fit: cover
+        min-height: 100%
+        max-width: 100%

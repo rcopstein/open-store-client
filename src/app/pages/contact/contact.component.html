@@ -1,0 +1,125 @@
+<div class="wrapper">
+  <h1>Contact Us</h1>
+
+  <p>
+    If you have a question, suggestion, or just want to say "hello!" you can
+    reach us on social media using the links below.
+  </p>
+
+  <ul class="social">
+    <li>
+      <a href="#">
+        <app-image-frame
+          [external]="true"
+          class="social-icon"
+          src="/assets/img/icons/social/facebook.svg"
+        ></app-image-frame>
+        Facebook
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        <app-image-frame
+          [external]="true"
+          class="social-icon"
+          src="/assets/img/icons/social/instagram.svg"
+        ></app-image-frame>
+        Instagram
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        <app-image-frame
+          [external]="true"
+          class="social-icon"
+          src="/assets/img/icons/social/twitter.svg"
+        ></app-image-frame>
+        Twitter
+      </a>
+    </li>
+  </ul>
+
+  <p>
+    However, if you need support with your order you can email us at
+    <a href="mailto:contact@company.com">contact@company.com</a> or using the
+    form below. We will respond to your inquire as soon as possible.
+  </p>
+
+  <form
+    *ngIf="!submitted"
+    class="contact-form"
+    #contactForm="ngForm"
+    (ngSubmit)="onSubmit()"
+  >
+    <label>Name</label>
+    <input
+      required
+      type="text"
+      name="name"
+      #name="ngModel"
+      [(ngModel)]="formModel.name"
+    />
+    <div *ngIf="name.invalid && (name.dirty || name.touched)">
+      <p class="error" *ngIf="name.errors.required">
+        Field is required
+      </p>
+    </div>
+
+    <label>Email</label>
+    <input
+      type="email"
+      name="email"
+      required
+      #email="ngModel"
+      appValidateEmailFormat
+      [(ngModel)]="formModel.email"
+    />
+    <div *ngIf="email.invalid && (email.dirty || email.touched)">
+      <p
+        class="error"
+        *ngIf="email.errors.emailFormat && !email.errors.required"
+      >
+        Invalid email format
+      </p>
+      <p class="error" *ngIf="email.errors.required">
+        Field is required
+      </p>
+    </div>
+
+    <label>Order Number (Optional)</label>
+    <input
+      type="text"
+      name="order"
+      #order="ngModel"
+      [(ngModel)]="formModel.order"
+    />
+
+    <label>Message</label>
+    <textarea
+      name="message"
+      required
+      #message="ngModel"
+      [(ngModel)]="formModel.message"
+    ></textarea>
+    <div *ngIf="message.invalid && (message.dirty || message.touched)">
+      <p class="error" *ngIf="message.errors.required">
+        Field is required
+      </p>
+    </div>
+
+    <app-loading-button
+      content="SEND"
+      [loading]="loading"
+      [enabled]="contactForm.valid"
+      (onPress)="contactForm.ngSubmit.emit()"
+    ></app-loading-button>
+  </form>
+
+  <div class="form-error" *ngIf="error">
+    There was an error sending your message. Please try again later.
+  </div>
+
+  <div class="thankyou" *ngIf="submitted">
+    Thank you for your message<br />We will reply as soon as possible
+  </div>
+</div>

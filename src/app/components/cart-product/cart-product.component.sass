@@ -1,0 +1,118 @@
+:host
+    grid-template-columns: auto 1fr auto auto
+    font-family: "Bellota Text", sans-serif
+    margin-bottom: 16px
+    align-items: center
+    min-height: 80px
+    display: grid
+
+    *
+        user-select: none
+
+.product-image
+    height: 80px
+    width: 80px
+
+.remove
+    padding: 16px 0px 16px 32px
+    box-sizing: border-box
+    cursor: pointer
+    max-width: 56px
+    height: 56px
+
+    &:hover
+        opacity: 0.4
+
+    & app-image-frame
+        background: none
+        height: 24px
+        width: 24px
+
+div
+    padding-left: 32px
+    flex-grow: 1
+
+    small
+        color: #777777
+
+    h4
+        margin: 0px
+
+    .alert span
+        color: red
+
+h4
+    a
+        text-decoration: none
+        color: inherit
+
+        &:hover
+            text-decoration: underline
+
+.qt
+    padding-left: 0px
+
+    &.onlyNumber
+        span
+            margin: 0px 0px 0px 16px
+
+    span
+        vertical-align: middle
+        display: inline-block
+        text-align: center
+        min-width: 32px
+        margin: 0 16px
+
+    .control
+        vertical-align: middle
+        box-sizing: border-box
+        display: inline-block
+        text-align: center
+        line-height: 24px
+        font-size: 24px
+        cursor: pointer
+        padding: 8px
+        height: 40px
+        width: 40px
+
+        &:hover
+            color: #555555
+
+        &.hide
+            color: #efefef
+            cursor: default
+
+            &:hover
+                color: #efefef
+
+@media screen and ( max-width: 564px )
+    :host
+        margin-bottom: 32px
+        min-height: 0px
+
+    div
+        padding-left: 16px
+
+    .remove
+        box-sizing: border-box
+        margin-top: 8px
+        grid-column: 3
+        padding: 8px
+        height: 40px
+        grid-row: 1
+        width: 40px
+
+    .product-image
+        height: 80px
+        width: 80px
+
+    .qt
+        grid-column: 2 / 4
+        text-align: center
+        padding-left: 0px
+        padding-top: 8px
+        grid-row: 2
+
+        &.onlyNumber
+            grid-column: 3
+            grid-row: 1

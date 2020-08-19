@@ -1,0 +1,43 @@
+<div class="wrapper" *ngIf="products">
+  <div class="noProductWarning" *ngIf="products.length === 0">
+    There are no products available right now. Please check again later.
+  </div>
+
+  <div class="product-list" *ngIf="Shoes.length !== 0">
+    <div class="product-item">
+      <h2>Shoes</h2>
+    </div>
+
+    <a
+      *ngFor="let p of Shoes"
+      class="product-item"
+      [routerLink]="['/catalog', p.id]"
+    >
+      <app-image-frame
+        src="/assets/products/{{ p.id }}.jpg"
+        external="true"
+      ></app-image-frame>
+      <h4>{{ p.name }}</h4>
+      <small>{{ p.price.currency }}$ {{ p.price.price / 100 }}</small>
+    </a>
+  </div>
+
+  <div class="product-list" *ngIf="Cases.length !== 0">
+    <div class="product-item">
+      <h2>Cases</h2>
+    </div>
+
+    <a
+      *ngFor="let p of Cases"
+      class="product-item"
+      [routerLink]="['/catalog', p.id]"
+    >
+      <app-image-frame
+        src="/assets/products/{{ p.id }}.jpg"
+        external="true"
+      ></app-image-frame>
+      <h4>{{ p.name }}</h4>
+      <small>{{ p.price.currency }}$ {{ p.price.price / 100 }}</small>
+    </a>
+  </div>
+</div>

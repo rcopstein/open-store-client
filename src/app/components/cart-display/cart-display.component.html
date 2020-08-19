@@ -1,0 +1,15 @@
+<div *ngIf="loading">
+  <app-loading-indicator class="loading-indicator"></app-loading-indicator>
+</div>
+
+<div *ngIf="!loading">
+  <app-cart-product
+    *ngFor="let item of items; let i = index"
+    (onQuantityChanged)="quantityChanged(item.unit.id, $event)"
+    [showQuantityControls]="showQuantityControls"
+    (onRemove)="removeItem(item.unit.id)"
+    [showRemove]="showRemove"
+    [item]="item"
+  >
+  </app-cart-product>
+</div>

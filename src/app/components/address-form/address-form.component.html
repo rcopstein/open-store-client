@@ -1,0 +1,83 @@
+<div [formGroup]="parentFormGroup">
+  <!-- Street -->
+  <div>
+    <label>
+      Street
+      <input
+        placeholder="123 Custom Drive"
+        formControlName="street"
+        type="text"
+      />
+    </label>
+
+    <div *ngIf="street.invalid && (street.dirty || forceShowValidation)">
+      <p class="error" *ngIf="street.errors.required">
+        Field is required
+      </p>
+    </div>
+  </div>
+
+  <!-- City -->
+  <div>
+    <label>
+      City
+      <input placeholder="Halifax" formControlName="city" type="text" />
+    </label>
+
+    <div *ngIf="city.invalid && (city.dirty || forceShowValidation)">
+      <p class="error" *ngIf="city.errors.required">
+        Field is required
+      </p>
+    </div>
+  </div>
+
+  <!-- State -->
+  <div class="half">
+    <label>
+      {{ statePrompt }}
+
+      <label class="select">
+        <select formControlName="state">
+          <option *ngFor="let state of states" [value]="state.value">
+            {{ state.text }}
+          </option>
+        </select>
+      </label>
+    </label>
+
+    <div *ngIf="state.invalid && (state.dirty || forceShowValidation)">
+      <p class="error" *ngIf="state.errors.province">
+        Invalid province
+      </p>
+      <p class="error" *ngIf="state.errors.state">
+        Invalid state
+      </p>
+      <p class="error" *ngIf="state.errors.required">
+        Field is required
+      </p>
+    </div>
+  </div>
+
+  <!-- Postal Code -->
+  <div class="half">
+    <label for="postalCode">
+      Postal Code
+      <input
+        [placeholder]="postalCodePlaceholder"
+        formControlName="postalCode"
+        type="text"
+      />
+    </label>
+
+    <div
+      *ngIf="postalCode.invalid && (postalCode.dirty || forceShowValidation)"
+    >
+      <p class="error" *ngIf="postalCode.errors.postalCode">
+        Invalid postal code
+      </p>
+      <p class="error" *ngIf="postalCode.errors.required">
+        Field is required
+      </p>
+    </div>
+  </div>
+</div>

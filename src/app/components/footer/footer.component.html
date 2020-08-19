@@ -1,0 +1,55 @@
+<div>
+  <div class="wrapper">
+    <div class="inner-footer">
+      <app-image-frame
+        class="logo"
+        src="/assets/img/logo.svg"
+        [external]="true"
+      >
+      </app-image-frame>
+
+      <ul class="site-map">
+        <li><a [routerLink]="['/']">Home</a></li>
+        <li><a [routerLink]="['/catalog']">Shop</a></li>
+        <li><a [routerLink]="['/about']">About</a></li>
+        <li><a [routerLink]="['/contact']">Contact</a></li>
+      </ul>
+
+      <div class="contact">
+        <p>
+          123 Roundabout <br />
+          Halifax NS, Canada
+        </p>
+        <ul class="social">
+          <li>
+            <a href="#">
+              <app-image-frame
+                [external]="true"
+                class="social-icon"
+                src="/assets/img/icons/social/facebook.svg"
+              ></app-image-frame>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <app-image-frame
+                [external]="true"
+                class="social-icon"
+                src="/assets/img/icons/social/instagram.svg"
+              ></app-image-frame>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <app-image-frame
+                [external]="true"
+                class="social-icon"
+                src="/assets/img/icons/social/twitter.svg"
+              ></app-image-frame>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

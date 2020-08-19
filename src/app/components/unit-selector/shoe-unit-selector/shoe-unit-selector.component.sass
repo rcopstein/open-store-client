@@ -1,0 +1,35 @@
+h3
+    margin-top: 0px
+
+input
+    display: none
+
+    &:checked + span
+        border: 1px solid #333333
+
+    &:disabled + span
+        color: #cccccc
+
+    & + span
+        margin-right: 4px
+        transition: 0.25s
+        border-radius: 50%
+        border: 1px solid transparent
+        display: inline-block
+        box-sizing: border-box
+        line-height: 38px
+        text-align: center
+        vertical-align: middle
+        font-size: 18px
+        height: 40px
+        width: 40px
+
+    &:not(:disabled) + span
+        cursor: pointer
+
+        &:hover
+            background: #eeeeee
+
+.unit-alert
+    margin-top: 16px
+    color: red
